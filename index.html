@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 6 - jQuery Party Detective</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <p class="subtitle">WEB TECHNOLOGIES · ASSIGNMENT 06</p>
+            <h1>The Birthday Party</h1>
+            <p class="header-description">
+                A jQuery investigation to find the missing birthday cake.
+            </p>
+        </div>
+        <div class="header-number">06</div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <div>
+                <span class="section-label">THE MYSTERY</span>
+                <h2>Who took the birthday cake?</h2>
+                <p>
+                    The party started at 19:30. At 21:30, the birthday cake
+                    disappeared from the kitchen. Investigate the guests
+                    and discover the thief.
+                </p>
+            </div>
+            <div class="cake">🎂</div>
+        </section>
+
+        <section class="legend">
+            <span><i class="dot red"></i> Red</span>
+            <span><i class="dot blue"></i> Blue</span>
+            <span><i class="dot green"></i> Green</span>
+            <span><i class="dot yellow"></i> Yellow</span>
+            <span><i class="dot purple"></i> Purple</span>
+            <span><i class="dot black"></i> Black</span>
+            <span>📱 Phone</span>
+            <span>👓 Glasses</span>
+            <span>👜 Bag</span>
+            <span>☕ Cup</span>
+            <span>🍰 Crumbs</span>
+            <span>🔵 AITU student</span>
+        </section>
+
+        <section class="house">
+
+            <div class="floor-label">
+                <span>SECOND FLOOR</span>
+                <span>02</span>
+            </div>
+
+            <div class="rooms">
+                <section class="room balcony" id="room-balcony" data-room="balcony">
+                    <div class="room-header">
+                        <h3>Balcony</h3>
+                        <span class="guest-count"></span>
+                    </div>
+                    <div class="guest-list"></div>
+                    <button class="sort-button">Sort by time ↕</button>
+                </section>
+
+                <section class="room hall" id="room-hall" data-room="hall">
+                    <div class="room-header">
+                        <h3>Hall</h3>
+                        <span class="guest-count"></span>
+                    </div>
+                    <div class="guest-list"></div>
+                    <button class="sort-button">Sort by time ↕</button>
+                </section>
+            </div>
+
+            <div class="floor-label">
+                <span>FIRST FLOOR</span>
+                <span>01</span>
+            </div>
+
+            <div class="rooms">
+                <section class="room kitchen" id="room-kitchen" data-room="kitchen">
+                    <div class="room-header">
+                        <h3>Kitchen</h3>
+                        <span class="guest-count"></span>
+                    </div>
+                    <div class="guest-list"></div>
+                    <button class="sort-button">Sort by time ↕</button>
+                </section>
+
+                <section class="room living" id="room-living" data-room="living">
+                    <div class="room-header">
+                        <h3>Living Room</h3>
+                        <span class="guest-count"></span>
+                    </div>
+                    <div class="guest-list"></div>
+                    <button class="sort-button">Sort by time ↕</button>
+                </section>
+            </div>
+
+        </section>
+
+        <section class="investigation">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">TASK 1</span>
+                    <h2>Selector Detective</h2>
+                </div>
+                <button id="reset-party" class="secondary-button">
+                    Reset Party
+                </button>
+            </div>
+
+            <p class="description">
+                Select a case to investigate the guests using jQuery selectors
+                and traversal methods.
+            </p>
+
+            <div class="case-grid" id="case-buttons"></div>
+
+            <div class="result">
+                <div class="result-symbol">🔎</div>
+                <div>
+                    <span class="result-label">INVESTIGATION RESULT</span>
+                    <h3 id="result-title">Choose a case</h3>
+                    <p id="result-text">
+                        The investigation results will appear here.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="motion">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">TASK 2</span>
+                    <h2>The Party in Motion</h2>
+                </div>
+                <button id="clear-spotlight" class="secondary-button">
+                    Clear Spotlight
+                </button>
+            </div>
+
+            <p class="description">
+                Click a guest to see their information. Move guests between
+                rooms and sort them by arrival time.
+            </p>
+
+            <div class="instructions">
+                <span>↗ Click a guest to see details</span>
+                <span>↔ Move guests between rooms</span>
+                <span>↕ Sort by arrival time</span>
+                <span>Esc closes the information card</span>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+
+    <section class="guest-modal" id="guest-modal">
+        <button class="close-modal" id="close-modal">×</button>
+        <div id="modal-content"></div>
+    </section>
+
+    <footer>
+        <span>Assignment 6 · jQuery</span>
+        <span>Astana IT University</span>
+    </footer>
+
+</body>
+</html>
